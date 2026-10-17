@@ -1,0 +1,11 @@
+{
+  "seed": 42,
+  "train_file": "data/train.jsonl",
+  "validation_file": "data/validation.jsonl",
+  "output_dir": "checkpoints/touch-grass-v0",
+  "batch_size": 2,
+  "gradient_accumulation_steps": 8,
+  "learning_rate": 0.0002,
+  "lora_rank": 16,
+  "lora_alpha": 32
+}

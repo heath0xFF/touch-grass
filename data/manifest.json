@@ -1,0 +1,176 @@
+{
+  "seed": 42,
+  "source_sha256": "6160fde79da6fc285478561138d032890aaf4e63661653eb51f24a2396672c14",
+  "variants_per_scenario": 15,
+  "method": "Authored synthetic templates; project-name substitutions and candidate permutations. Not independent trajectories.",
+  "splits": {
+    "train": {
+      "examples": 1200,
+      "scenarios": 80,
+      "labels": {
+        "CHANGE_STRATEGY": 240,
+        "TOUCH_GRASS": 240,
+        "ESCALATE": 240,
+        "CONTINUE": 240,
+        "RETRY": 240
+      },
+      "domains": {
+        "browser/tool automation": 240,
+        "DevOps": 240,
+        "research": 240,
+        "sysadmin": 240,
+        "coding": 240
+      },
+      "correct_position_by_label": {
+        "CONTINUE": [
+          48,
+          48,
+          48,
+          48,
+          48
+        ],
+        "RETRY": [
+          48,
+          48,
+          48,
+          48,
+          48
+        ],
+        "CHANGE_STRATEGY": [
+          48,
+          48,
+          48,
+          48,
+          48
+        ],
+        "ESCALATE": [
+          48,
+          48,
+          48,
+          48,
+          48
+        ],
+        "TOUCH_GRASS": [
+          48,
+          48,
+          48,
+          48,
+          48
+        ]
+      },
+      "sha256": "76bcae7e29b6f45cc94e3335804f83f4d6e6ae9353cdaedb2ae2b116abf51788"
+    },
+    "validation": {
+      "examples": 150,
+      "scenarios": 10,
+      "labels": {
+        "TOUCH_GRASS": 30,
+        "RETRY": 30,
+        "CONTINUE": 30,
+        "CHANGE_STRATEGY": 30,
+        "ESCALATE": 30
+      },
+      "domains": {
+        "research": 30,
+        "coding": 30,
+        "browser/tool automation": 30,
+        "sysadmin": 30,
+        "DevOps": 30
+      },
+      "correct_position_by_label": {
+        "CONTINUE": [
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "RETRY": [
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "CHANGE_STRATEGY": [
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "ESCALATE": [
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "TOUCH_GRASS": [
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      },
+      "sha256": "ebc226eda29c7428a9ea133dc164803585238e7e46fe888829a7b1da4f92fc1a"
+    },
+    "test": {
+      "examples": 150,
+      "scenarios": 10,
+      "labels": {
+        "CHANGE_STRATEGY": 30,
+        "RETRY": 30,
+        "TOUCH_GRASS": 30,
+        "CONTINUE": 30,
+        "ESCALATE": 30
+      },
+      "domains": {
+        "research": 30,
+        "sysadmin": 30,
+        "browser/tool automation": 30,
+        "DevOps": 30,
+        "coding": 30
+      },
+      "correct_position_by_label": {
+        "CONTINUE": [
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "RETRY": [
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "CHANGE_STRATEGY": [
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "ESCALATE": [
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "TOUCH_GRASS": [
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      },
+      "sha256": "ff104fd423a4e8e3afb86929dd88cf0ce15e92e5b14841fe61bc4fb01ec6eb22"
+    }
+  }
+}
