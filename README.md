@@ -15,9 +15,9 @@ A tiny decision model telling a much larger agent when to stop digging.
 This project is inspired by [Liquid AI's Antidoom](https://www.liquid.ai/blog/antidoom). **It is not an implementation of Antidoom or FTPO.** Antidoom changes token-level behavior inside a generative model. This project scores five actions over an agent's task and trajectory.
 
 **Status: experimental v0.** This repository includes code, data, measured
-results, and reproduction instructions. Fine-tuned weights are not published;
-run the training recipe below to create them. The model is advisory, not a
-production safety or authorization system.
+results, and reproduction instructions. [Download the v0 weights on Hugging Face](https://huggingface.co/heath0xFF/touch-grass-v0)
+to run the model without training. The model is advisory, not a production
+safety or authorization system.
 
 ## The decision
 
@@ -55,7 +55,29 @@ small, authored sets are a proof of concept, not evidence of production safety.
 took **246.5 seconds** with **6.51 GiB peak Torch allocation**; this is not total
 host-memory use or end-to-end setup time.
 
-## Quick start: DGX Spark
+## Try the released model
+
+The Hugging Face release is a full merged checkpoint with the native d1 API,
+not an adapter that you must merge yourself. Install
+[uv](https://docs.astral.sh/uv/getting-started/installation/), then use an
+available CUDA GPU:
+
+```sh
+git clone https://github.com/heath0xFF/touch-grass.git
+cd touch-grass
+uv sync --locked --extra model
+uv run hf download heath0xFF/touch-grass-v0 --revision v0 \
+  --local-dir checkpoints/touch-grass-v0/merged
+uv run touch-grass judge examples/trajectory.json --json
+```
+
+No training step is needed. `--device cpu` is also available with enough memory;
+see [CLI](#cli). The [model card](https://huggingface.co/heath0xFF/touch-grass-v0)
+includes direct native API usage and the exact decision question. The release
+commit and verified weight hash are recorded in
+[`results/huggingface.json`](results/huggingface.json).
+
+## Reproduce training: DGX Spark
 
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/) first.
 Use an isolated environment on an available GPU. Stop other large GPU workloads **with their owner's approval** before training. Spark shares CPU and GPU memory; check `free -h`, not just `nvidia-smi`.
@@ -99,9 +121,11 @@ memory, and driver 580.178.04.
 
 Training and evaluation refuse to overwrite an existing output directory.
 For another run, use a new `output_dir` in a copy of the config and a new
-evaluation output path. Model weights are excluded from Git; reproduce them
-with the training command. No weights are silently downloaded from an
-unpublished touch-grass Hub repository.
+evaluation output path. Model weights are excluded from Git; download the
+published release or reproduce them with the training command. The CLI loads
+the local checkpoint directory and does not silently download the tuned model.
+If you already downloaded v0 into the default checkpoint path, choose a new
+training `output_dir` rather than overwrite it.
 
 For data work and unit tests only, `uv sync --locked` does not install Torch.
 For inference only, use `uv sync --locked --extra model`.

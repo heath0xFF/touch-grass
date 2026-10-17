@@ -1,0 +1,41 @@
+{
+  "repo_id": "heath0xFF/touch-grass-v0",
+  "url": "https://huggingface.co/heath0xFF/touch-grass-v0",
+  "revision": "8cd6d51892d82b61db40f2ff4889a7dfe0755f89",
+  "tag": "v0",
+  "base_revision": "da1fe36a861f24690f27f622dca1d8688503d113",
+  "format": "Full merged BF16 Safetensors checkpoint with native d1 API",
+  "weights": {
+    "file": "model.safetensors",
+    "bytes": 6247065504,
+    "sha256": "be755f5b07ba9b00e945647c49fa7688a821a87e1ffab5011c307849bbcb7472"
+  },
+  "verified_files": [
+    "LICENSE",
+    "NOTICE",
+    "README.md",
+    "api.py",
+    "chat_template.jinja",
+    "config.json",
+    "decision.json",
+    "example.json",
+    "generation_config.json",
+    "hybrid.py",
+    "lfm2_vl.py",
+    "model.safetensors",
+    "modeling_d1.py",
+    "processor_config.json",
+    "prompt.py",
+    "runner.py",
+    "tokenizer.json",
+    "tokenizer_config.json",
+    "training.json"
+  ],
+  "verification": {
+    "anonymous_download": true,
+    "original_checkpoint_hashes_match": true,
+    "native_class_meta_load": true,
+    "inference_rerun": false,
+    "note": "Downloaded files match the evaluated v0 checkpoint. Class/tokenizer checks used no model allocation on CUDA; production services remained running."
+  }
+}

@@ -10,6 +10,7 @@ an isolated uv environment, not the resident inference services.
 - [`training.json`](training.json): configuration, package versions, data hashes, supervised-token check, training history, runtime, and peak Torch allocation.
 - [`demo.json`](demo.json): native CUDA BF16 CLI result for `examples/trajectory.json`, with canonical candidate order and full probabilities.
 - [`artifacts.json`](artifacts.json): sizes and SHA-256 hashes for the adapter, merged weights, native code, and supporting checkpoint files. All 27 files were copied back from Spark and verified.
+- [`huggingface.json`](huggingface.json): public v0 release location, commit, tag, and verified weight hash.
 
 Base and fine-tuned evaluations use the same 150 validation rows, 150 synthetic
 test rows, and 30 gold rows. Predictions are in dataset order. Candidate order
@@ -32,7 +33,9 @@ GPU training is seeded, but different kernels or hardware need not produce
 bit-identical weights. Artifact hashes identify this run, not a guarantee that
 a new run will have the same hashes.
 
-Weights are not stored in Git. Reproduction commands are in the root README;
-training writes both the adapter and the native merged checkpoint. Data files
-are included in this repository. No separate Hugging Face model or dataset
-release is provided.
+Weights are not stored in Git. The full merged v0 checkpoint is published at
+[heath0xFF/touch-grass-v0](https://huggingface.co/heath0xFF/touch-grass-v0),
+with the native d1 API, license, decision question, and model card. These are
+the weights from this recorded run, not a new fine-tune. Reproduction commands
+remain in the root README. Data files are included in Git; no separate Hugging
+Face dataset release is provided.
