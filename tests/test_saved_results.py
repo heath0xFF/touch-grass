@@ -4,6 +4,7 @@ from pathlib import Path
 
 from touch_grass.dataset import load_rows
 from touch_grass.evaluate import metrics
+from touch_grass.evaluate_exports import comparison
 from touch_grass.judge import validate_answer
 
 
@@ -34,3 +35,27 @@ def test_published_metrics_match_raw_predictions():
                 [row["action"] for row in rows], [row["action"] for row in predictions]
             )
             assert json.loads(json.dumps(computed)) == {key: saved[key] for key in computed}
+            if "comparison" in saved:
+                reference_path = Path(f"results/finetuned/{split}.predictions.jsonl")
+                reference = [json.loads(line) for line in reference_path.read_text().splitlines()]
+                assert (
+                    saved["reference_sha256"]
+                    == hashlib.sha256(reference_path.read_bytes()).hexdigest()
+                )
+                assert saved["comparison"] == comparison(reference, predictions)
+
+
+def test_export_manifest_matches_evaluation():
+    manifest = json.loads(Path("results/exports.json").read_text())
+    source = json.loads(Path("results/huggingface.json").read_text())
+    assert manifest["source"] == source
+    for name, export in manifest["exports"].items():
+        assert export["source_revision"] == source["revision"]
+        assert export["source_weights_sha256"] == source["weights"]["sha256"]
+        assert export["evaluation"] == json.loads(Path(f"results/{name}/metrics.json").read_text())
+        assert {row["path"] for row in export["files"]} >= {
+            "LICENSE",
+            "NOTICE",
+            "README.md",
+            "request.json",
+        }

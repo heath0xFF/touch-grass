@@ -1,0 +1,630 @@
+{
+  "source": {
+    "repo_id": "heath0xFF/touch-grass-v0",
+    "url": "https://huggingface.co/heath0xFF/touch-grass-v0",
+    "revision": "8cd6d51892d82b61db40f2ff4889a7dfe0755f89",
+    "tag": "v0",
+    "base_revision": "da1fe36a861f24690f27f622dca1d8688503d113",
+    "format": "Full merged BF16 Safetensors checkpoint with native d1 API",
+    "weights": {
+      "file": "model.safetensors",
+      "bytes": 6247065504,
+      "sha256": "be755f5b07ba9b00e945647c49fa7688a821a87e1ffab5011c307849bbcb7472"
+    },
+    "verified_files": [
+      "LICENSE",
+      "NOTICE",
+      "README.md",
+      "api.py",
+      "chat_template.jinja",
+      "config.json",
+      "decision.json",
+      "example.json",
+      "generation_config.json",
+      "hybrid.py",
+      "lfm2_vl.py",
+      "model.safetensors",
+      "modeling_d1.py",
+      "processor_config.json",
+      "prompt.py",
+      "runner.py",
+      "tokenizer.json",
+      "tokenizer_config.json",
+      "training.json"
+    ],
+    "verification": {
+      "anonymous_download": true,
+      "original_checkpoint_hashes_match": true,
+      "native_class_meta_load": true,
+      "inference_rerun": false,
+      "note": "Downloaded files match the evaluated v0 checkpoint. Class/tokenizer checks used no model allocation on CUDA; production services remained running."
+    }
+  },
+  "hardware": "Apple M5 Pro, 48 GiB unified memory",
+  "llama_cpp_commit": "10b8b7553494f3638da7668cf17cac089229122a",
+  "mlx_vlm_commit": "73d366ecf9233b3fc6549531a7f2386726d09ff6",
+  "packages": {
+    "mlx": "0.32.4",
+    "mlx-vlm": "0.7.8",
+    "torch": "2.14.1",
+    "torchvision": "0.29.1",
+    "transformers": "5.19.0",
+    "numpy": "2.5.4",
+    "gguf": "0.19.0",
+    "sentencepiece": "0.2.2",
+    "protobuf": "7.36.2",
+    "huggingface-hub": "2.2.0",
+    "safetensors": "0.8.0"
+  },
+  "exports": {
+    "gguf-q8_0": {
+      "repo_id": "heath0xFF/touch-grass-v0-GGUF",
+      "source_revision": "8cd6d51892d82b61db40f2ff4889a7dfe0755f89",
+      "source_weights_sha256": "be755f5b07ba9b00e945647c49fa7688a821a87e1ffab5011c307849bbcb7472",
+      "description": "Text-only GGUF converted via F16, then C++ llama-quantize Q8_0. No vision tower or projector. Native lfm2-d1 decision type and System One template retained.",
+      "llama_cpp_commit": "10b8b7553494f3638da7668cf17cac089229122a",
+      "mlx_vlm_commit": "73d366ecf9233b3fc6549531a7f2386726d09ff6",
+      "hardware": "Apple M5 Pro, 48 GiB unified memory",
+      "packages": {
+        "mlx": "0.32.4",
+        "mlx-vlm": "0.7.8",
+        "torch": "2.14.1",
+        "torchvision": "0.29.1",
+        "transformers": "5.19.0",
+        "numpy": "2.5.4",
+        "gguf": "0.19.0",
+        "sentencepiece": "0.2.2",
+        "protobuf": "7.36.2",
+        "huggingface-hub": "2.2.0",
+        "safetensors": "0.8.0"
+      },
+      "files": [
+        {
+          "path": "LICENSE",
+          "bytes": 10574,
+          "sha256": "4d28ca14dedc0b3d0fcc2b3339f0e79931faa33874f3d24f522183a8fc70068c"
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 575,
+          "sha256": "e98597296c8157c544e3510a21b9a8823a6bfb3e0e20f69187ec2e49a63d7f9f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 4403,
+          "sha256": "cec92518beafb905997194ec55ad47472104199ad4a9fb640a8cfe90cf09149f"
+        },
+        {
+          "path": "request.json",
+          "bytes": 1707,
+          "sha256": "1359578476d5948cf3791a8578ce6b110cd05c71dfb4c0e54f2ce3d5885031fd"
+        },
+        {
+          "path": "touch-grass-v0-Q8_0.gguf",
+          "bytes": 2874780480,
+          "sha256": "daed1d23b569ad6419f8b1fcf4c9532f348b29f159e28a5c7b5b481efd4e2639"
+        },
+        {
+          "path": "training.json",
+          "bytes": 6177,
+          "sha256": "0f597cb18f30cbb884a746f5b945906b9eb1a6d675c95eb67ffb53786f52b38a"
+        }
+      ],
+      "evaluation": {
+        "backend": "gguf",
+        "model": "http://127.0.0.1:18081",
+        "platform": "macOS-26.6.2-arm64-arm-64bit",
+        "python": "3.12.13",
+        "transformers": "5.19.0",
+        "batch_size": 1,
+        "splits": {
+          "test": {
+            "n": 150,
+            "accuracy": 0.9,
+            "macro_f1": 0.8933333333333333,
+            "per_class": {
+              "CONTINUE": {
+                "precision": 0.6666666666666666,
+                "recall": 1.0,
+                "f1": 0.8,
+                "support": 30
+              },
+              "RETRY": {
+                "precision": 1.0,
+                "recall": 0.5,
+                "f1": 0.6666666666666666,
+                "support": 30
+              },
+              "CHANGE_STRATEGY": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 30
+              },
+              "ESCALATE": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 30
+              },
+              "TOUCH_GRASS": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 30
+              }
+            },
+            "confusion_matrix": {
+              "labels": [
+                "CONTINUE",
+                "RETRY",
+                "CHANGE_STRATEGY",
+                "ESCALATE",
+                "TOUCH_GRASS"
+              ],
+              "rows": "truth",
+              "columns": "prediction",
+              "values": [
+                [
+                  30,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  15,
+                  15,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  30,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  30,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  30
+                ]
+              ]
+            },
+            "touch_grass_recall": 1.0,
+            "false_stop_rate": 0.0,
+            "false_stops": 0,
+            "false_stop_denominator": 90,
+            "dataset_sha256": "ff104fd423a4e8e3afb86929dd88cf0ce15e92e5b14841fe61bc4fb01ec6eb22",
+            "reference_sha256": "2d4822c8f8caac4cf6f9346710f4ad67232056cd043d9679c7ebf92f9871c362",
+            "seconds": 14.747738250007387,
+            "comparison": {
+              "reference": "Published CUDA BF16 native d1, batch size 4",
+              "note": "Changes include runtime, precision, batch shape, and quantization effects.",
+              "same_top_answer": 150,
+              "max_absolute_probability_change": 0.041264841327408264,
+              "mean_absolute_probability_change": 0.00026639679286355483,
+              "changed_answers": []
+            }
+          },
+          "gold": {
+            "n": 30,
+            "accuracy": 0.9,
+            "macro_f1": 0.8978621378621379,
+            "per_class": {
+              "CONTINUE": {
+                "precision": 1.0,
+                "recall": 0.8333333333333334,
+                "f1": 0.9090909090909091,
+                "support": 6
+              },
+              "RETRY": {
+                "precision": 0.75,
+                "recall": 1.0,
+                "f1": 0.8571428571428571,
+                "support": 6
+              },
+              "CHANGE_STRATEGY": {
+                "precision": 1.0,
+                "recall": 0.6666666666666666,
+                "f1": 0.8,
+                "support": 6
+              },
+              "ESCALATE": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 6
+              },
+              "TOUCH_GRASS": {
+                "precision": 0.8571428571428571,
+                "recall": 1.0,
+                "f1": 0.923076923076923,
+                "support": 6
+              }
+            },
+            "confusion_matrix": {
+              "labels": [
+                "CONTINUE",
+                "RETRY",
+                "CHANGE_STRATEGY",
+                "ESCALATE",
+                "TOUCH_GRASS"
+              ],
+              "rows": "truth",
+              "columns": "prediction",
+              "values": [
+                [
+                  5,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  6,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  4,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  6,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  6
+                ]
+              ]
+            },
+            "touch_grass_recall": 1.0,
+            "false_stop_rate": 0.05555555555555555,
+            "false_stops": 1,
+            "false_stop_denominator": 18,
+            "dataset_sha256": "0c823c89c63ae1d580a1fd7d6804b929694c7307322d8616b371bac2b71cb25f",
+            "reference_sha256": "c860586fc920bff4898e9472ef18033de66a903bb8dd31be85bb4e0e83752aa7",
+            "seconds": 2.9693935830146074,
+            "comparison": {
+              "reference": "Published CUDA BF16 native d1, batch size 4",
+              "note": "Changes include runtime, precision, batch shape, and quantization effects.",
+              "same_top_answer": 30,
+              "max_absolute_probability_change": 0.07570978495646519,
+              "mean_absolute_probability_change": 0.0013919220117620155,
+              "changed_answers": []
+            }
+          }
+        }
+      }
+    },
+    "mlx-8bit": {
+      "repo_id": "heath0xFF/touch-grass-v0-MLX-8bit",
+      "source_revision": "8cd6d51892d82b61db40f2ff4889a7dfe0755f89",
+      "source_weights_sha256": "be755f5b07ba9b00e945647c49fa7688a821a87e1ffab5011c307849bbcb7472",
+      "description": "MLX 8-bit affine, group size 64; remaining tensors float16. Vision retained but not validated. PyTorch modules omitted; native d1 is provided by mlx-vlm.",
+      "llama_cpp_commit": "10b8b7553494f3638da7668cf17cac089229122a",
+      "mlx_vlm_commit": "73d366ecf9233b3fc6549531a7f2386726d09ff6",
+      "hardware": "Apple M5 Pro, 48 GiB unified memory",
+      "packages": {
+        "mlx": "0.32.4",
+        "mlx-vlm": "0.7.8",
+        "torch": "2.14.1",
+        "torchvision": "0.29.1",
+        "transformers": "5.19.0",
+        "numpy": "2.5.4",
+        "gguf": "0.19.0",
+        "sentencepiece": "0.2.2",
+        "protobuf": "7.36.2",
+        "huggingface-hub": "2.2.0",
+        "safetensors": "0.8.0"
+      },
+      "files": [
+        {
+          "path": "LICENSE",
+          "bytes": 10574,
+          "sha256": "4d28ca14dedc0b3d0fcc2b3339f0e79931faa33874f3d24f522183a8fc70068c"
+        },
+        {
+          "path": "NOTICE",
+          "bytes": 572,
+          "sha256": "66c3815a64f3f951af9a271c349d278bd4495925d557a13685b7d1bf1aeac190"
+        },
+        {
+          "path": "README.md",
+          "bytes": 5160,
+          "sha256": "79868a2cb2a2e5f16e86460c1918c6532fce21fad7de2ed34cce61866ad1c416"
+        },
+        {
+          "path": "chat_template.jinja",
+          "bytes": 5436,
+          "sha256": "86f4770449a4797c9b4212d110b0cc70fb993c1ce960095bcfb12eea22f61cca"
+        },
+        {
+          "path": "config.json",
+          "bytes": 3702,
+          "sha256": "d13aaf7c618459d4c83c89825e32ab39077c5d5ffdf37f21a46ddb3d69848907"
+        },
+        {
+          "path": "generation_config.json",
+          "bytes": 168,
+          "sha256": "729cdc90ab14284db71578ab8680244977424ab0266b6aa3fdc65d9de1477e35"
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 3718719935,
+          "sha256": "be9ea061a4cb71494edb701f4898c81b5b8070adf374c74931744613c2ac729b"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "bytes": 87177,
+          "sha256": "e14c8c0ce415f9d17c9e1a53f01ffc07741ff9b3a7e64524bc138c2565976a0d"
+        },
+        {
+          "path": "processor_config.json",
+          "bytes": 720,
+          "sha256": "7c68d308c96ca6111414d641e6fe9b94505167a1d00714f18f43fd7f8ae91414"
+        },
+        {
+          "path": "request.json",
+          "bytes": 1707,
+          "sha256": "1359578476d5948cf3791a8578ce6b110cd05c71dfb4c0e54f2ce3d5885031fd"
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 17905589,
+          "sha256": "c4687c0046da6579aba6f9aa713e9bed61e5fd210b0e012028ae57751d028689"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 506,
+          "sha256": "880b960c1ea99a84bc16cb759e2e343ea8126f8e86ecb3bcb0a837b2aebb8c1d"
+        },
+        {
+          "path": "training.json",
+          "bytes": 6177,
+          "sha256": "0f597cb18f30cbb884a746f5b945906b9eb1a6d675c95eb67ffb53786f52b38a"
+        }
+      ],
+      "evaluation": {
+        "backend": "mlx",
+        "model": "checkpoints/touch-grass-v0-MLX-8bit",
+        "platform": "macOS-26.6.2-arm64-arm-64bit",
+        "python": "3.12.13",
+        "transformers": "5.19.0",
+        "batch_size": 1,
+        "splits": {
+          "test": {
+            "n": 150,
+            "accuracy": 0.9,
+            "macro_f1": 0.8933333333333333,
+            "per_class": {
+              "CONTINUE": {
+                "precision": 0.6666666666666666,
+                "recall": 1.0,
+                "f1": 0.8,
+                "support": 30
+              },
+              "RETRY": {
+                "precision": 1.0,
+                "recall": 0.5,
+                "f1": 0.6666666666666666,
+                "support": 30
+              },
+              "CHANGE_STRATEGY": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 30
+              },
+              "ESCALATE": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 30
+              },
+              "TOUCH_GRASS": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 30
+              }
+            },
+            "confusion_matrix": {
+              "labels": [
+                "CONTINUE",
+                "RETRY",
+                "CHANGE_STRATEGY",
+                "ESCALATE",
+                "TOUCH_GRASS"
+              ],
+              "rows": "truth",
+              "columns": "prediction",
+              "values": [
+                [
+                  30,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  15,
+                  15,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  30,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  30,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  30
+                ]
+              ]
+            },
+            "touch_grass_recall": 1.0,
+            "false_stop_rate": 0.0,
+            "false_stops": 0,
+            "false_stop_denominator": 90,
+            "dataset_sha256": "ff104fd423a4e8e3afb86929dd88cf0ce15e92e5b14841fe61bc4fb01ec6eb22",
+            "reference_sha256": "2d4822c8f8caac4cf6f9346710f4ad67232056cd043d9679c7ebf92f9871c362",
+            "seconds": 10.973697707988322,
+            "comparison": {
+              "reference": "Published CUDA BF16 native d1, batch size 4",
+              "note": "Changes include runtime, precision, batch shape, and quantization effects.",
+              "same_top_answer": 150,
+              "max_absolute_probability_change": 0.03710634339009422,
+              "mean_absolute_probability_change": 0.00035137643250172826,
+              "changed_answers": []
+            }
+          },
+          "gold": {
+            "n": 30,
+            "accuracy": 0.9,
+            "macro_f1": 0.8978621378621379,
+            "per_class": {
+              "CONTINUE": {
+                "precision": 1.0,
+                "recall": 0.8333333333333334,
+                "f1": 0.9090909090909091,
+                "support": 6
+              },
+              "RETRY": {
+                "precision": 0.75,
+                "recall": 1.0,
+                "f1": 0.8571428571428571,
+                "support": 6
+              },
+              "CHANGE_STRATEGY": {
+                "precision": 1.0,
+                "recall": 0.6666666666666666,
+                "f1": 0.8,
+                "support": 6
+              },
+              "ESCALATE": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 6
+              },
+              "TOUCH_GRASS": {
+                "precision": 0.8571428571428571,
+                "recall": 1.0,
+                "f1": 0.923076923076923,
+                "support": 6
+              }
+            },
+            "confusion_matrix": {
+              "labels": [
+                "CONTINUE",
+                "RETRY",
+                "CHANGE_STRATEGY",
+                "ESCALATE",
+                "TOUCH_GRASS"
+              ],
+              "rows": "truth",
+              "columns": "prediction",
+              "values": [
+                [
+                  5,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  6,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  4,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  6,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  6
+                ]
+              ]
+            },
+            "touch_grass_recall": 1.0,
+            "false_stop_rate": 0.05555555555555555,
+            "false_stops": 1,
+            "false_stop_denominator": 18,
+            "dataset_sha256": "0c823c89c63ae1d580a1fd7d6804b929694c7307322d8616b371bac2b71cb25f",
+            "reference_sha256": "c860586fc920bff4898e9472ef18033de66a903bb8dd31be85bb4e0e83752aa7",
+            "seconds": 2.3974979170016013,
+            "comparison": {
+              "reference": "Published CUDA BF16 native d1, batch size 4",
+              "note": "Changes include runtime, precision, batch shape, and quantization effects.",
+              "same_top_answer": 30,
+              "max_absolute_probability_change": 0.10446145763683057,
+              "mean_absolute_probability_change": 0.0020975735363795533,
+              "changed_answers": []
+            }
+          }
+        },
+        "packages": {
+          "mlx": "0.32.4",
+          "mlx-vlm": "0.7.8",
+          "numpy": "2.5.4"
+        },
+        "readout": "Native model.probabilities; predict() rounds to four decimal places"
+      }
+    }
+  }
+}

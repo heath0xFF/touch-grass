@@ -77,6 +77,23 @@ includes direct native API usage and the exact decision question. The release
 commit and verified weight hash are recorded in
 [`results/huggingface.json`](results/huggingface.json).
 
+### GGUF and Apple Silicon
+
+| Format | Release | Native runtime |
+| --- | --- | --- |
+| GGUF Q8_0, text-only | [touch-grass-v0-GGUF](https://huggingface.co/heath0xFF/touch-grass-v0-GGUF) | llama.cpp `/v1/systemone` |
+| MLX 8-bit | [touch-grass-v0-MLX-8bit](https://huggingface.co/heath0xFF/touch-grass-v0-MLX-8bit) | mlx-vlm d1 decision methods |
+
+Both matched the original chosen action on **180/180 test and gold cases**,
+including the same gold false stop. Probabilities differ: the largest change
+was 0.076 for GGUF and 0.104 for MLX. These differences include runtime and
+precision changes, not quantization alone. Do not assume existing probability
+thresholds remain valid.
+
+Use the model cards for inference, or [the export guide](docs/exports.md) for
+conversion, full results, and evaluation commands. These formats do not load
+through `touch-grass judge` or an ordinary chat interface.
+
 ## Reproduce training: DGX Spark
 
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/) first.

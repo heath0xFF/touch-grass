@@ -11,6 +11,9 @@ an isolated uv environment, not the resident inference services.
 - [`demo.json`](demo.json): native CUDA BF16 CLI result for `examples/trajectory.json`, with canonical candidate order and full probabilities.
 - [`artifacts.json`](artifacts.json): sizes and SHA-256 hashes for the adapter, merged weights, native code, and supporting checkpoint files. All 27 files were copied back from Spark and verified.
 - [`huggingface.json`](huggingface.json): public v0 release location, commit, tag, and verified weight hash.
+- [`gguf-q8_0/`](gguf-q8_0/) and [`mlx-8bit/`](mlx-8bit/): native 8-bit export predictions and comparisons with the CUDA BF16 run.
+- [`exports.json`](exports.json): conversion source, tool revisions, artifact hashes, and export evaluations.
+- [`export-releases.json`](export-releases.json): public export commits, tags, and download verification.
 
 Base and fine-tuned evaluations use the same 150 validation rows, 150 synthetic
 test rows, and 30 gold rows. Predictions are in dataset order. Candidate order
@@ -32,6 +35,13 @@ eligible cases. Read the failure examples before using this as an agent signal.
 GPU training is seeded, but different kernels or hardware need not produce
 bit-identical weights. Artifact hashes identify this run, not a guarantee that
 a new run will have the same hashes.
+
+The 8-bit exports were evaluated separately on Apple M5 Pro with one case per
+call, using the same test and gold inputs and candidate orders. Each matched
+the original top action on 180/180 cases. Probabilities are not identical; the
+[export guide](../docs/exports.md) reports the differences and limits. These
+comparisons include runtime, precision, batch shape, and quantization effects.
+They are not a new training run or a pure quantization ablation.
 
 Weights are not stored in Git. The full merged v0 checkpoint is published at
 [heath0xFF/touch-grass-v0](https://huggingface.co/heath0xFF/touch-grass-v0),

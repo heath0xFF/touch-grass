@@ -1,0 +1,43 @@
+{
+  "gguf-q8_0": {
+    "repo_id": "heath0xFF/touch-grass-v0-GGUF",
+    "url": "https://huggingface.co/heath0xFF/touch-grass-v0-GGUF",
+    "revision": "d0bc955ef82dc0f6ec697edf93899bfc65b924fd",
+    "tag": "v0",
+    "verified_files": [
+      "LICENSE",
+      "NOTICE",
+      "README.md",
+      "export.json",
+      "request.json",
+      "touch-grass-v0-Q8_0.gguf",
+      "training.json"
+    ],
+    "anonymous_download": true,
+    "downloaded_files_match_evaluated_export": true
+  },
+  "mlx-8bit": {
+    "repo_id": "heath0xFF/touch-grass-v0-MLX-8bit",
+    "url": "https://huggingface.co/heath0xFF/touch-grass-v0-MLX-8bit",
+    "revision": "518368d22868e7e04fde0b2675aaf02afb8a9e89",
+    "tag": "v0",
+    "verified_files": [
+      "LICENSE",
+      "NOTICE",
+      "README.md",
+      "chat_template.jinja",
+      "config.json",
+      "export.json",
+      "generation_config.json",
+      "model.safetensors",
+      "model.safetensors.index.json",
+      "processor_config.json",
+      "request.json",
+      "tokenizer.json",
+      "tokenizer_config.json",
+      "training.json"
+    ],
+    "anonymous_download": true,
+    "downloaded_files_match_evaluated_export": true
+  }
+}

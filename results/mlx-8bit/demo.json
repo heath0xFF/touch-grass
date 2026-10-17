@@ -1,0 +1,14 @@
+{
+  "action": "TOUCH_GRASS",
+  "probabilities": {
+    "CONTINUE": 8.597169689031597e-06,
+    "RETRY": 2.010348405592452e-06,
+    "CHANGE_STRATEGY": 9.87449960073255e-07,
+    "ESCALATE": 3.4197178345923307e-06,
+    "TOUCH_GRASS": 0.9999849853141108
+  },
+  "usage": {
+    "input_tokens": 316,
+    "output_tokens": 0
+  }
+}

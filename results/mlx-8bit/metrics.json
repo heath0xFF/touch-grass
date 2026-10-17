@@ -1,0 +1,216 @@
+{
+  "backend": "mlx",
+  "model": "checkpoints/touch-grass-v0-MLX-8bit",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": "3.12.13",
+  "transformers": "5.19.0",
+  "batch_size": 1,
+  "splits": {
+    "test": {
+      "n": 150,
+      "accuracy": 0.9,
+      "macro_f1": 0.8933333333333333,
+      "per_class": {
+        "CONTINUE": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1": 0.8,
+          "support": 30
+        },
+        "RETRY": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "support": 30
+        },
+        "CHANGE_STRATEGY": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 30
+        },
+        "ESCALATE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 30
+        },
+        "TOUCH_GRASS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 30
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "CONTINUE",
+          "RETRY",
+          "CHANGE_STRATEGY",
+          "ESCALATE",
+          "TOUCH_GRASS"
+        ],
+        "rows": "truth",
+        "columns": "prediction",
+        "values": [
+          [
+            30,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            15,
+            15,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            30,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            30,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            30
+          ]
+        ]
+      },
+      "touch_grass_recall": 1.0,
+      "false_stop_rate": 0.0,
+      "false_stops": 0,
+      "false_stop_denominator": 90,
+      "dataset_sha256": "ff104fd423a4e8e3afb86929dd88cf0ce15e92e5b14841fe61bc4fb01ec6eb22",
+      "reference_sha256": "2d4822c8f8caac4cf6f9346710f4ad67232056cd043d9679c7ebf92f9871c362",
+      "seconds": 10.973697707988322,
+      "comparison": {
+        "reference": "Published CUDA BF16 native d1, batch size 4",
+        "note": "Changes include runtime, precision, batch shape, and quantization effects.",
+        "same_top_answer": 150,
+        "max_absolute_probability_change": 0.03710634339009422,
+        "mean_absolute_probability_change": 0.00035137643250172826,
+        "changed_answers": []
+      }
+    },
+    "gold": {
+      "n": 30,
+      "accuracy": 0.9,
+      "macro_f1": 0.8978621378621379,
+      "per_class": {
+        "CONTINUE": {
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "f1": 0.9090909090909091,
+          "support": 6
+        },
+        "RETRY": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "support": 6
+        },
+        "CHANGE_STRATEGY": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "ESCALATE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "TOUCH_GRASS": {
+          "precision": 0.8571428571428571,
+          "recall": 1.0,
+          "f1": 0.923076923076923,
+          "support": 6
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "CONTINUE",
+          "RETRY",
+          "CHANGE_STRATEGY",
+          "ESCALATE",
+          "TOUCH_GRASS"
+        ],
+        "rows": "truth",
+        "columns": "prediction",
+        "values": [
+          [
+            5,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            6,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            6,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            6
+          ]
+        ]
+      },
+      "touch_grass_recall": 1.0,
+      "false_stop_rate": 0.05555555555555555,
+      "false_stops": 1,
+      "false_stop_denominator": 18,
+      "dataset_sha256": "0c823c89c63ae1d580a1fd7d6804b929694c7307322d8616b371bac2b71cb25f",
+      "reference_sha256": "c860586fc920bff4898e9472ef18033de66a903bb8dd31be85bb4e0e83752aa7",
+      "seconds": 2.3974979170016013,
+      "comparison": {
+        "reference": "Published CUDA BF16 native d1, batch size 4",
+        "note": "Changes include runtime, precision, batch shape, and quantization effects.",
+        "same_top_answer": 30,
+        "max_absolute_probability_change": 0.10446145763683057,
+        "mean_absolute_probability_change": 0.0020975735363795533,
+        "changed_answers": []
+      }
+    }
+  },
+  "packages": {
+    "mlx": "0.32.4",
+    "mlx-vlm": "0.7.8",
+    "numpy": "2.5.4"
+  },
+  "readout": "Native model.probabilities; predict() rounds to four decimal places"
+}

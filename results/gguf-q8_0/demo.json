@@ -1,0 +1,21 @@
+{
+  "model": "checkpoints/touch-grass-v0-GGUF/touch-grass-v0-Q8_0.gguf",
+  "answers": {
+    "action": {
+      "type": "choice",
+      "choice": "TOUCH_GRASS",
+      "probabilities": {
+        "CONTINUE": 8.414630229884694e-06,
+        "RETRY": 1.9616754740471556e-06,
+        "CHANGE_STRATEGY": 9.595902634589786e-07,
+        "ESCALATE": 3.350251107264822e-06,
+        "TOUCH_GRASS": 0.9999853138529253
+      },
+      "confidence": 0.9999816423161567
+    }
+  },
+  "usage": {
+    "input_tokens": 316,
+    "output_tokens": 0
+  }
+}
