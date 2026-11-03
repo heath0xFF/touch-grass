@@ -9,3 +9,13 @@ checkpoints/
 *.log
 .env
 .DS_Store
+
+# Keep the personal learning workspace local.
+.impeccable/
+/DESIGN.md
+/PRODUCT.md
+/docs/learn.html
+/docs/learning-workspace.md
+/scripts/embed_learning_data.py
+/tests/learn.browser.cjs
+/tests/test_learning_guide.py
